@@ -7,6 +7,7 @@ import * as Joi from '@hapi/joi';
 import { AuthenticationModule } from './authentication/authentication.module';
 import { ExceptionsLoggerFilter } from './utils/exceptionsLogger.filter';
 import { APP_FILTER } from '@nestjs/core';
+import { CategoriesModule } from './categories/categories.module';
 
 
 @Module({
@@ -25,7 +26,8 @@ import { APP_FILTER } from '@nestjs/core';
     DatabaseModule,
     PostsModule,
     UsersModule,
-    AuthenticationModule
+    AuthenticationModule,
+    CategoriesModule
   ],
   controllers: [],
   providers: [
