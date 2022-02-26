@@ -42,4 +42,11 @@ export class CategoriesService {
         }
         throw new CategoryNotFoundException(id);
     }
+
+    async deleteCategory(id: number) {
+        const deleteResponse = await this.categoriesRepository.delete(id)
+        if (!deleteResponse.affected) {
+            throw new CategoryNotFoundException(id)
+        }
+    }
 }
